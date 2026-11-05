@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Library - Reports</title>
+
+    <link rel="stylesheet" href="../css/reports.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <h2>📚 Digital Library</h2>
+
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="books.html">📚 Books</a>
+            <a href="members.html">👥 Members</a>
+            <a href="issueBooks.html">📖 Issue Book</a>
+            <a href="returnBooks.html">↩️ Return Book</a>
+            <a href="reports.html" class="active">📊 Reports</a>
+            <a href="about.html">ℹ️ About</a>
+            <a href="login.html" id="logoutLink">🚪 Logout</a>
+        </div>
+    </nav>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main>
+
+        <div class="page-heading">
+            <h1>📊 Library Reports</h1>
+            <p>View the current status of your library</p>
+        </div>
+
+
+        <!-- SUMMARY CARDS -->
+
+        <section class="report-container">
+
+            <div class="report-card">
+                <div class="card-icon">📚</div>
+                <h3>Total Books</h3>
+                <p id="totalBooks">0</p>
+            </div>
+
+            <div class="report-card">
+                <div class="card-icon">👥</div>
+                <h3>Total Members</h3>
+                <p id="totalMembers">0</p>
+            </div>
+
+            <div class="report-card">
+                <div class="card-icon">✅</div>
+                <h3>Available Books</h3>
+                <p id="availableBooks">0</p>
+            </div>
+
+            <div class="report-card">
+                <div class="card-icon">📖</div>
+                <h3>Issued Books</h3>
+                <p id="issuedBooks">0</p>
+            </div>
+
+        </section>
+
+
+        <!-- REPORT DETAILS -->
+
+        <section class="report-details">
+
+            <h2>📋 Report Summary</h2>
+
+            <p>
+                Total Books:
+                <span id="summaryTotalBooks">0</span>
+            </p>
+
+            <p>
+                Total Members:
+                <span id="summaryTotalMembers">0</span>
+            </p>
+
+            <p>
+                Available Books:
+                <span id="summaryAvailableBooks">0</span>
+            </p>
+
+            <p>
+                Issued Books:
+                <span id="summaryIssuedBooks">0</span>
+            </p>
+
+            <button id="refreshButton" type="button">
+                🔄 Refresh Reports
+            </button>
+
+            <p id="reportMessage"></p>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+     <script>
+     document.getElementById("logoutLink").addEventListener("click", function () {
+     localStorage.removeItem("users");
+     sessionStorage.clear();
+});
+</script>
+
+    <script src="../js/reports.js"></script>
+
+</body>
+
+</html>

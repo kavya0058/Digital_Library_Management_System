@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Library - Issue Book</title>
+
+    <link rel="stylesheet"
+          href="../css/issueBooks.css">
+
+</head>
+
+<body>
+
+
+    <!-- ================= NAVIGATION BAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            📚 Digital Library
+        </div>
+
+        <div class="nav-links">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="books.html">
+                📚 Books
+            </a>
+
+            <a href="members.html">
+                👥 Members
+            </a>
+
+            <a href="issueBooks.html"
+               class="active">
+                📖 Issue Book
+            </a>
+
+            <a href="returnBooks.html">
+                ↩️ Return Book
+            </a>
+
+            <a href="reports.html">
+                📊 Reports
+            </a>
+
+            <a href="about.html">
+                ℹ️ About
+            </a>
+
+            
+            <a href="login.html" id="logoutLink">
+                🚪 Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="issue-container">
+
+
+        <!-- PAGE HEADING -->
+
+        <div class="page-heading">
+
+            <p>
+                📚 Digital Library
+            </p>
+
+            <h1>
+                Issue Book
+            </h1>
+
+            <span>
+                Issue a book to a library member
+            </span>
+
+        </div>
+
+
+        <!-- ================= ISSUE FORM ================= -->
+
+        <section class="issue-section">
+
+            <div class="section-heading">
+
+                <h2>
+                    📖 Issue Book Form
+                </h2>
+
+                <p>
+                    Select a member and book to issue
+                </p>
+
+            </div>
+
+
+            <form id="issueForm">
+
+
+                <!-- MEMBER -->
+
+                <div class="input-group">
+
+                    <label for="member">
+                        Member Name
+                    </label>
+
+                    <select id="member">
+
+                        <option value="">
+                            Select Member
+                        </option>
+
+                    </select>
+
+                    <p id="memberError"
+                       class="error-message">
+                    </p>
+
+                </div>
+
+
+                <!-- BOOK -->
+
+                <div class="input-group">
+
+                    <label for="book">
+                        Book Name
+                    </label>
+
+                    <select id="book">
+
+                        <option value="">
+                            Select Book
+                        </option>
+
+                    </select>
+
+                    <p id="bookError"
+                       class="error-message">
+                    </p>
+
+                </div>
+
+                <!-- ISSUE DATE -->
+
+<div class="input-group">
+
+    <label for="issueDate">
+        Issue Date
+    </label>
+
+    <input type="date"
+           id="issueDate"
+           required>
+
+    <p id="issueDateError"
+       class="error-message">
+    </p>
+
+</div>
+
+
+<!-- RETURN DATE -->
+
+<div class="input-group">
+
+    <label for="returnDate">
+        Return Date
+    </label>
+
+    <input type="date"
+           id="returnDate"
+           required>
+
+    <p id="returnDateError"
+       class="error-message">
+    </p>
+
+</div>
+                
+
+
+                <!-- BUTTONS -->
+
+                <div class="form-buttons">
+
+                    <button type="submit"
+                            class="issue-button">
+
+                        📖 Issue Book
+
+                    </button>
+
+
+                    <button type="button"
+                            id="clearButton"
+                            class="clear-button">
+
+                        Clear
+
+                    </button>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+
+                <p id="message"
+                   class="message">
+                </p>
+
+
+            </form>
+
+        </section>
+
+
+        <!-- ================= ISSUE RECORDS ================= -->
+
+        <section class="records-section">
+
+            <div class="section-heading">
+
+                <h2>
+                    📋 Issue Records
+                </h2>
+
+                <p>
+                    Books issued during this session
+                </p>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Member Name
+                            </th>
+
+                            <th>
+                                Book Name
+                            </th>
+
+                            <th>
+                                Issue Date
+                            </th>
+
+                            <th>
+                                Return Date
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="issueTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+    <script>
+    document.getElementById("logoutLink").addEventListener("click", function () {
+    localStorage.removeItem("users");
+    sessionStorage.clear();
+});
+</script>
+    <script src="../js/issueBooks.js"></script>
+
+</body>
+
+</html>

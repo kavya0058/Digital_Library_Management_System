@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Library Management System</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+
+            font-family: Arial, sans-serif;
+
+            background-image:
+                url("images/library1.jpg");
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay {
+            width: 100%;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: rgba(62, 39, 35, 0.65);
+        }
+
+        .welcome-box {
+            width: 90%;
+            max-width: 650px;
+
+            text-align: center;
+
+            padding: 50px;
+
+            background: #f5eee6;
+
+            border-radius: 50px;
+
+            box-shadow:
+                0 10px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #3e2723;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #795548;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .get-started {
+            display: inline-block;
+
+            padding: 13px 30px;
+
+            background: #5d4037;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+        }
+
+        .get-started:hover {
+            background: #3e2723;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="overlay">
+
+        <div class="welcome-box">
+
+            <div class="icon">📚</div>
+
+            <h1>
+                Digital Library Management System
+            </h1>
+
+            <p>
+                Welcome to our Digital Library Management System.
+                Explore books, manage your library account,
+                and enjoy a simple digital reading experience.
+            </p>
+
+            <a href="pages/login.html" class="get-started">
+                Get Started
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

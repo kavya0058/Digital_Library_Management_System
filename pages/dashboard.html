@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Library - Dashboard</title>
+
+    <link rel="stylesheet"
+          href="../css/dashboard.css">
+
+</head>
+
+<body>
+
+
+    <!-- ================= NAVIGATION BAR ================= -->
+
+    <nav class="navbar">
+
+        <!-- Logo -->
+
+        <div class="logo">
+            📚 Digital Library
+        </div>
+
+
+        <!-- Navigation Menu -->
+
+        <div class="nav-links">
+
+            <a href="dashboard.html"
+               class="active">
+                Dashboard
+            </a>
+
+            <!-- Books goes to separate page -->
+
+            <a href="books.html">
+                📚 Books
+            </a>
+
+            <a href="members.html">
+                👥 Members
+            </a>
+
+            <a href="issueBooks.html">
+                📖 Issue Book
+            </a>
+
+            <a href="returnBooks.html">
+                ↩️ Return Book
+            </a>
+
+            <a href="reports.html">
+                📊 Reports
+            </a>
+
+            <a href="#">
+                ℹ️ About
+            </a>
+
+            <a href="login.html" id="logoutLink">🚪 Logout</a>
+
+        </div>
+
+    </nav>
+
+    
+
+
+
+    <!-- ================= MAIN DASHBOARD ================= -->
+
+    <main class="dashboard">
+
+
+        <!-- ================= WELCOME SECTION ================= -->
+
+        <section class="welcome-section">
+
+
+            <!-- Welcome Text -->
+
+            <div>
+
+                <p class="welcome-small">
+                    Welcome back 👋
+                </p>
+
+                <h1>
+                    Welcome,
+                    <span id="memberName">
+                        Member
+                    </span>!
+                </h1>
+
+                <p class="subtitle">
+                    Manage your library activities
+                    easily from your dashboard.
+                </p>
+
+            </div>
+
+
+            <!-- ================= MEMBER PROFILE ================= -->
+
+            <div class="profile-card">
+
+                <div class="profile-icon">
+                    👤
+                </div>
+
+                <div class="profile-details">
+
+                    <h2 id="profileName">
+                        Member
+                    </h2>
+
+                    <p id="profileEmail">
+                        member@email.com
+                    </p>
+
+                    <span>
+                        Library Member
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= SUMMARY CARDS ================= -->
+
+        <section class="cards">
+
+
+            <!-- Total Books -->
+
+            <div class="card">
+
+                <div class="card-icon">
+                    📚
+                </div>
+
+                <div class="card-content">
+
+                    <h2>
+                        Total Books
+                    </h2>
+
+                    <p id="totalBooks">0</p>
+
+                    <small>
+                        Available in library
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Total Members -->
+
+            <div class="card">
+
+                <div class="card-icon">
+                    👥
+                </div>
+
+                <div class="card-content">
+
+                    <h2>
+                        Total Members
+                    </h2>
+
+                    <p id="totalMembers">0</p>
+
+                    <small>
+                        Registered members
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Books Issued -->
+
+            <div class="card">
+
+                <div class="card-icon">
+                    📖
+                </div>
+
+                <div class="card-content">
+
+                    <h2>
+                        Books Issued
+                    </h2>
+
+                    <p id="totalIssued">0</p>
+
+                    <small>
+                        Currently issued
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Books Returned -->
+
+            <div class="card">
+
+                <div class="card-icon">
+                    ↩️
+                </div>
+
+                <div class="card-content">
+
+                    <h2>
+                        Books Returned
+                    </h2>
+
+                    <p id="totalReturned">0</p>
+
+                    <small>
+                        Successfully returned
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= LIBRARY OVERVIEW ================= -->
+
+        <section class="overview">
+
+            <div class="overview-header">
+
+                <div>
+
+                    <h2>
+                        📚 Library Overview
+                    </h2>
+
+                    <p>
+                        Your digital library at a glance
+                    </p>
+
+                </div>
+
+                <div class="overview-icon">
+                    🏛️
+                </div>
+
+            </div>
+
+
+
+            <div class="overview-content">
+
+
+                <!-- Explore Books -->
+
+                <div class="overview-item">
+
+                    <span>
+                        📕
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Explore My Books
+                        </h3>
+
+                        <p>
+                            Browse and discover books
+                            available in the library.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Issue & Return -->
+
+                <div class="overview-item">
+
+                    <span>
+                        📖
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Issue & Return
+                        </h3>
+
+                        <p>
+                            Manage issued and returned
+                            books easily.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Reports -->
+
+                <div class="overview-item">
+
+                    <span>
+                        📊
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Library Reports
+                        </h3>
+
+                        <p>
+                            View useful information
+                            about library activities.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- Dashboard JavaScript -->
+     <script>
+    
+    document.getElementById("logoutLink").addEventListener("click", function () {
+
+    localStorage.removeItem("currentUser");
+    sessionStorage.clear();
+
+});
+</script>
+</script>
+
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>

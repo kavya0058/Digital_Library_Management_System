@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background-image:
+        url("../images/library2.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.overlay {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    background: rgba(62, 39, 35, 0.65);
+}
+
+.form-box {
+    width: 100%;
+    max-width: 480px;
+
+    padding: 35px;
+
+    background: #f5eee6;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+.library-icon {
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+
+    color: #3e2723;
+
+    font-size: 25px;
+
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+
+    color: #795548;
+
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+
+    margin-top: 14px;
+    margin-bottom: 6px;
+
+    font-weight: bold;
+
+    color: #4e342e;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #a1887f;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #6d4c41;
+}
+
+textarea {
+    height: 75px;
+    resize: none;
+}
+
+.password-info {
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    line-height: 18px;
+
+    color: #795548;
+}
+
+.error-message {
+    margin-top: 6px;
+
+    color: #b71c1c;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #5d4037;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3e2723;
+}
+
+.success-message {
+    display: none;
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    color: green;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.login-text {
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #795548;
+}
+
+.login-text a {
+    color: #5d4037;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}

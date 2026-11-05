@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Library - Books</title>
+
+    <link rel="stylesheet" href="../css/books.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            📚 Digital Library
+        </div>
+
+        <div class="nav-links">
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="books.html" class="active">📚 Books</a>
+            <a href="members.html">👥 Members</a>
+            <a href="issueBooks.html">📖 Issue Book</a>
+            <a href="returnBooks.html">↩️ Return Book</a>
+            <a href="reports.html">📊 Reports</a>
+            <a href="#">ℹ️ About</a>
+            <a href="login.html" id="logoutLink">🚪 Logout</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="books-container">
+
+        <!-- PAGE HEADING -->
+        <div class="page-heading">
+
+            <p>📚 Digital Library</p>
+
+            <h1>Book Management</h1>
+
+            <span>View and add books to the library</span>
+
+        </div>
+
+
+       
+           
+
+            
+
+
+        <!-- BOOK LIST -->
+        <section class="book-list-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>📖 Book List</h2>
+
+                    <p>Books available in the library</p>
+
+                </div>
+
+                <button id="showAddBook">
+                    + Add Book
+                </button>
+
+            </div>
+
+        <!-- TABLE / GALLERY VIEW BUTTONS -->
+
+<div class="view-toggle">
+    <button type="button" id="tableViewBtn" class="active-view">
+        ☰ Table View
+    </button>
+
+    <button type="button" id="galleryViewBtn">
+        ▦ Gallery View
+    </button>
+</div>
+
+<!-- BOOK GALLERY -->
+
+<div id="bookGallery" class="book-gallery" style="display: none;"></div>    
+
+
+            <!-- EXISTING BOOK SEARCH -->
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="bookSearch"
+                    placeholder="🔍 Search by Book ID, Book Name, Author or Category">
+
+                <button
+                    type="button"
+                    id="clearSearch">
+                    Clear
+                </button>
+
+            </div>
+
+
+            <!-- BOOK TABLE -->
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Book ID</th>
+                            <th>Book Name</th>
+                            <th>Author</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="bookTableBody">
+                        <!-- Books displayed using JavaScript -->
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ADD BOOK FORM -->
+        <section id="addBookSection" class="add-book-section">
+
+            <div class="form-heading">
+
+                <h2>➕ Add New Book</h2>
+
+                <p>Enter the details of the new book</p>
+
+            </div>
+
+
+            <form id="bookForm">
+
+                <!-- BOOK ID -->
+                <div class="input-group">
+
+                    <label for="bookId">Book ID</label>
+
+                    <input
+                        type="text"
+                        id="bookId"
+                        placeholder="Enter Book ID"
+                        maxlength="10">
+
+                    <p id="bookIdError" class="error-message"></p>
+
+                </div>
+
+
+                <!-- BOOK NAME -->
+                <div class="input-group">
+
+                    <label for="bookName">Book Name</label>
+
+                    <input
+                        type="text"
+                        id="bookName"
+                        placeholder="Enter Book Name"
+                        maxlength="100">
+
+                    <p id="bookNameError" class="error-message"></p>
+
+                </div>
+
+
+                <!-- AUTHOR -->
+                <div class="input-group">
+
+                    <label for="author">Author</label>
+
+                    <input
+                        type="text"
+                        id="author"
+                        placeholder="Enter Author Name">
+
+                    <p id="authorError" class="error-message"></p>
+
+                </div>
+
+
+                <!-- CATEGORY -->
+                <div class="input-group">
+
+                    <label for="category">Category</label>
+
+                    <input
+                        type="text"
+                        id="category"
+                        placeholder="Enter Category">
+
+                    <p id="categoryError" class="error-message"></p>
+
+                </div>
+
+
+                <!-- PUBLISHER -->
+                <div class="input-group">
+
+                    <label for="publisher">Publisher</label>
+
+                    <input
+                        type="text"
+                        id="publisher"
+                        placeholder="Enter Publisher">
+
+                    <p id="publisherError" class="error-message"></p>
+
+                </div>
+
+
+                <!-- YEAR -->
+                <div class="input-group">
+
+                    <label for="year">Year</label>
+
+                    <input
+                        type="number"
+                        id="year"
+                        placeholder="Enter Year"
+                        maxlength="4"
+                        inputmode="numeric">
+
+                    <p id="yearError" class="error-message"></p>
+
+                </div>
+
+
+                <!-- QUANTITY -->
+                <div class="input-group">
+
+                    <label for="quantity">Quantity</label>
+
+                    <input
+                        type="number"
+                        id="quantity"
+                        placeholder="Enter Quantity"
+                        maxlength="3"
+                        inputmode="numeric">
+
+                    <p id="quantityError" class="error-message"></p>
+
+                </div>
+
+
+                <!-- BOOK COVER URL -->
+                <div class="input-group">
+
+                    <label for="bookImage">Book Cover Image URL</label>
+
+                    <input
+                        type="url"
+                        id="bookImage"
+                        placeholder="Select a book above or paste image URL">
+
+                </div>
+
+
+                <!-- BOOK WEBSITE URL -->
+                <div class="input-group">
+
+                    <label for="bookUrl">Book Website URL</label>
+
+                    <input
+                        type="url"
+                        id="bookUrl"
+                        placeholder="Online book information link">
+
+                </div>
+
+
+                <!-- FORM BUTTONS -->
+                <div class="form-buttons">
+
+                    <button type="submit" class="save-button">
+                        Save Book
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelButton"
+                        class="cancel-button">
+                        Cancel
+                    </button>
+
+                </div>
+
+
+                <!-- SUCCESS MESSAGE -->
+                <p id="successMessage" class="success-message"></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- BOOK DETAILS MODAL -->
+    <div id="bookModal" class="book-modal">
+
+        <div class="book-details-box">
+
+            <button
+                class="close-button"
+                onclick="closeBookDetails()">
+                ✕
+            </button>
+
+            <h2>📚 Book Details</h2>
+
+            <!-- BOOK COVER -->
+            <div class="view-book-cover">
+                <img
+                    id="viewBookImage"
+                    src=""
+                    alt="Book Cover"
+                    style="display: none;">
+
+            </div>
+
+            <div class="details">
+
+                <p>
+                    <strong>Book ID:</strong>
+                    <span id="viewBookId"></span>
+                </p>
+
+                <p>
+                    <strong>Book Name:</strong>
+                    <span id="viewBookName"></span>
+                </p>
+
+                <p>
+                    <strong>Author:</strong>
+                    <span id="viewAuthor"></span>
+                </p>
+
+                <p>
+                    <strong>Category:</strong>
+                    <span id="viewCategory"></span>
+                </p>
+
+                <p>
+                    <strong>Publisher:</strong>
+                    <span id="viewPublisher"></span>
+                </p>
+
+                <p>
+                    <strong>Year:</strong>
+                    <span id="viewYear"></span>
+                </p>
+
+                <p>
+                    <strong>Quantity:</strong>
+                    <span id="viewQuantity"></span>
+                </p>
+
+            </div>
+
+            <!-- ONLINE BOOK LINK -->
+            <a
+                id="viewBookUrl"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="display: none;">
+                🌐 View Book Online
+            </a>
+
+            <button
+                class="close-details"
+                onclick="closeBookDetails()">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- DELETE CONFIRMATION MODAL -->
+    <div id="deleteModal" class="book-modal">
+
+        <div class="delete-details-box">
+
+            <div class="delete-icon">⚠️</div>
+
+            <h2>Delete Book</h2>
+
+            <p>Are you sure you want to delete this book?</p>
+
+            <p class="delete-book-name">
+                <strong id="deleteBookName"></strong>
+            </p>
+
+            <div class="delete-buttons">
+
+                <button
+                    class="cancel-delete"
+                    onclick="closeDeleteModal()">
+                    Cancel
+                </button>
+
+                <button
+                    class="confirm-delete"
+                    onclick="confirmDelete()">
+                    Delete
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+     <script>
+     document.getElementById("logoutLink").addEventListener("click", function () {
+     localStorage.removeItem("users");
+     sessionStorage.clear();
+});
+</script>
+    <script src="../js/books.js"></script>
+
+</body>
+
+</html>

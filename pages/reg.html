@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Library Management System - Register</title>
+
+    <link rel="stylesheet" href="../css/reg.css">
+
+    <style>
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin: 4px 0 10px 0;
+        }
+
+        .success-message {
+            color: green;
+            font-size: 16px;
+            font-weight: bold;
+            display: none;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="overlay">
+
+        <div class="form-box">
+
+            <div class="library-icon">📚</div>
+
+            <h1>Library Management System</h1>
+
+            <p class="subtitle">
+                Create your library account
+            </p>
+
+
+            <form id="registerForm">
+
+                <!-- NAME -->
+
+                <label>User Name</label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter your name">
+
+                <p id="nameError" class="error-message"></p>
+
+
+                <!-- EMAIL -->
+
+                <label>User Email</label>
+
+                <input
+                    type="text"
+                    id="email"
+                    placeholder="Enter your email">
+
+                <p id="emailError" class="error-message"></p>
+
+
+                <!-- PHONE -->
+
+                <label>User Phone Number</label>
+
+                <input
+                    type="text"
+                    id="phone"
+                    placeholder="Enter 10 digit phone number"
+                    inputmode="numeric">
+
+                <p id="phoneError" class="error-message"></p>
+
+
+                <!-- ADDRESS -->
+
+                <label>User Address</label>
+
+                <textarea
+                    id="address"
+                    placeholder="Enter your address"></textarea>
+
+                <p id="addressError" class="error-message"></p>
+
+
+                <!-- PASSWORD -->
+
+                <label>User Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password">
+
+                <p id="passwordError" class="error-message"></p>
+
+
+                <!-- BUTTON -->
+
+                <button type="submit">
+                    Register
+                </button>
+
+            </form>
+
+
+            <!-- SUCCESS -->
+
+            <div id="successMessage" class="success-message">
+                ✓ Registered Successfully!
+            </div>
+
+
+            <!-- LOGIN -->
+
+            <p class="login-text">
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // =================================================
+    // GET ELEMENTS
+    // =================================================
+
+    const form = document.getElementById("registerForm");
+
+    const username = document.getElementById("username");
+    const email = document.getElementById("email");
+    const phone = document.getElementById("phone");
+    const address = document.getElementById("address");
+    const password = document.getElementById("password");
+
+    const nameError = document.getElementById("nameError");
+    const emailError = document.getElementById("emailError");
+    const phoneError = document.getElementById("phoneError");
+    const addressError = document.getElementById("addressError");
+    const passwordError = document.getElementById("passwordError");
+
+    const successMessage = document.getElementById("successMessage");
+
+
+    // =================================================
+    // FORM SUBMIT
+    // =================================================
+
+    form.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        // Clear previous errors
+
+        nameError.innerHTML = "";
+        emailError.innerHTML = "";
+        phoneError.innerHTML = "";
+        addressError.innerHTML = "";
+        passwordError.innerHTML = "";
+
+        successMessage.style.display = "none";
+
+
+        // Get values
+
+        let nameValue = username.value.trim();
+        let emailValue = email.value.trim();
+        let phoneValue = phone.value.trim();
+        let addressValue = address.value.trim();
+        let passwordValue = password.value;
+
+        let valid = true;
+
+
+        // =================================================
+        // NAME VALIDATION
+        // =================================================
+
+        if (nameValue === "") {
+
+            nameError.innerHTML =
+                "❌ Name is required.";
+
+            valid = false;
+
+        }
+
+        else if (!/^[A-Za-z ]+$/.test(nameValue)) {
+
+            nameError.innerHTML =
+                "❌ Name must contain alphabets only.";
+
+            valid = false;
+
+        }
+
+        else if (nameValue.length > 50) {
+
+            nameError.innerHTML =
+                "❌ Name must not exceed 50 characters.";
+
+            valid = false;
+
+        }
+
+
+        // =================================================
+        // EMAIL VALIDATION
+        // =================================================
+
+        if (emailValue === "") {
+
+            emailError.innerHTML =
+                "❌ Email is required.";
+
+            valid = false;
+
+        }
+
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+
+            emailError.innerHTML =
+                "❌ Enter a valid email address.";
+
+            valid = false;
+
+        }
+
+
+        // =================================================
+        // PHONE VALIDATION
+        // =================================================
+
+        if (phoneValue === "") {
+
+            phoneError.innerHTML =
+                "❌ Phone number is required.";
+
+            valid = false;
+
+        }
+
+        else if (!/^[0-9]+$/.test(phoneValue)) {
+
+            phoneError.innerHTML =
+                "❌ Phone number must contain numbers only.";
+
+            valid = false;
+
+        }
+
+        else if (phoneValue.length !== 10) {
+
+            phoneError.innerHTML =
+                "❌ Phone number must contain exactly 10 digits.";
+
+            valid = false;
+
+        }
+
+
+        // =================================================
+        // ADDRESS VALIDATION
+        // =================================================
+
+        if (addressValue === "") {
+
+            addressError.innerHTML =
+                "❌ Address is required.";
+
+            valid = false;
+
+        }
+
+
+        // =================================================
+        // PASSWORD VALIDATION
+        // =================================================
+
+        let passwordPattern =
+            /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+]).{8,}$/;
+
+        if (passwordValue === "") {
+
+            passwordError.innerHTML =
+                "❌ Password is required.";
+
+            valid = false;
+
+        }
+
+        else if (!passwordPattern.test(passwordValue)) {
+
+            passwordError.innerHTML =
+                "❌ Password must contain uppercase, lowercase, number, special character and minimum 8 characters.";
+
+            valid = false;
+
+        }
+
+
+        // =================================================
+        // IF INVALID
+        // =================================================
+
+        if (!valid) {
+
+            return;
+
+        }
+
+
+        // =================================================
+        // GET EXISTING USERS
+        // =================================================
+
+        let users =
+            JSON.parse(localStorage.getItem("users")) || [];
+
+
+        // =================================================
+        // CHECK EXISTING EMAIL
+        // =================================================
+
+        let existingUser = users.find(function (user) {
+
+            return user.email.toLowerCase() === emailValue.toLowerCase();
+
+        });
+
+        if (existingUser) {
+
+            emailError.innerHTML =
+                "❌ This email is already registered. Please Login.";
+
+            return;
+
+        }
+
+
+        // =================================================
+        // CREATE NEW USER
+        // =================================================
+
+        let newUser = {
+
+            username: nameValue,
+            email: emailValue,
+            phone: phoneValue,
+            address: addressValue,
+            password: passwordValue
+
+        };
+
+
+        // =================================================
+        // SAVE USER IN LOCAL STORAGE
+        // =================================================
+
+        users.push(newUser);
+
+        localStorage.setItem(
+            "users",
+            JSON.stringify(users)
+        );
+
+
+        // =================================================
+        // AUTOMATIC LOGIN
+        // =================================================
+
+        localStorage.setItem(
+            "currentUser",
+            JSON.stringify(newUser)
+        );
+
+
+        // =================================================
+        // SUCCESS MESSAGE
+        // =================================================
+
+        successMessage.innerHTML =
+            "✓ Registered Successfully!";
+
+        successMessage.style.display = "block";
+
+
+        // =================================================
+        // REDIRECT TO DASHBOARD
+        // =================================================
+
+        setTimeout(function () {
+
+            window.location.href = "dashboard.html";
+
+        }, 1000);
+
+    });
+
+
+
+    // =====================================================
+    // LIVE NAME VALIDATION
+    // =====================================================
+
+    username.addEventListener("input", function () {
+
+        let value = username.value;
+
+        if (value === "") {
+
+            nameError.innerHTML = "";
+
+        }
+
+        else if (!/^[A-Za-z ]*$/.test(value)) {
+
+            nameError.innerHTML =
+                "❌ Name must contain alphabets only.";
+
+        }
+
+        else if (value.length > 50) {
+
+            nameError.innerHTML =
+                "❌ Name must not exceed 50 characters.";
+
+        }
+
+        else {
+
+            nameError.innerHTML = "";
+
+        }
+
+    });
+
+
+
+    // =====================================================
+    // LIVE PHONE VALIDATION
+    // =====================================================
+
+    phone.addEventListener("input", function () {
+
+        // Remove letters and symbols
+
+        phone.value =
+            phone.value.replace(/[^0-9]/g, "");
+
+
+        // Maximum 10 digits
+
+        if (phone.value.length > 10) {
+
+            phone.value =
+                phone.value.substring(0, 10);
+
+        }
+
+
+        if (
+            phone.value.length > 0 &&
+            phone.value.length < 10
+        ) {
+
+            phoneError.innerHTML =
+                "❌ Enter exactly 10 digits.";
+
+        }
+
+        else {
+
+            phoneError.innerHTML = "";
+
+        }
+
+    });
+
+
+
+    // =====================================================
+    // LIVE EMAIL VALIDATION
+    // =====================================================
+
+    email.addEventListener("input", function () {
+
+        let value = email.value.trim();
+
+        if (value === "") {
+
+            emailError.innerHTML = "";
+
+        }
+
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+
+            emailError.innerHTML =
+                "❌ Enter a valid email address.";
+
+        }
+
+        else {
+
+            emailError.innerHTML = "";
+
+        }
+
+    });
+
+
+
+    // =====================================================
+    // LIVE ADDRESS VALIDATION
+    // =====================================================
+
+    address.addEventListener("input", function () {
+
+        if (address.value.trim() === "") {
+
+            addressError.innerHTML =
+                "❌ Address is required.";
+
+        }
+
+        else {
+
+            addressError.innerHTML = "";
+
+        }
+
+    });
+
+
+
+    // =====================================================
+    // LIVE PASSWORD VALIDATION
+    // =====================================================
+
+    password.addEventListener("input", function () {
+
+        let value = password.value;
+
+        let pattern =
+            /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+]).{8,}$/;
+
+
+        if (value === "") {
+
+            passwordError.innerHTML = "";
+
+        }
+
+        else if (!pattern.test(value)) {
+
+            passwordError.innerHTML =
+                "❌ Use uppercase, lowercase, number, special character and 8+ characters.";
+
+        }
+
+        else {
+
+            passwordError.innerHTML = "";
+
+        }
+
+    });
+
+});
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Library Management System - Login</title>
+
+    <!-- Login CSS -->
+
+    <link rel="stylesheet" href="../css/login.css">
+
+</head>
+
+<body>
+
+    <div class="overlay">
+
+        <div class="form-box">
+
+            <div class="library-icon">
+                📖
+            </div>
+
+
+            <h1>
+                Library Management System
+            </h1>
+
+
+            <p class="subtitle">
+                Login to your library account
+            </p>
+
+
+            <!-- Login Form -->
+
+            <form id="loginForm" novalidate>
+
+
+                <!-- ================= EMAIL ================= -->
+
+                <label>
+                    User Email
+                </label>
+
+                <input
+                    type="text"
+                    id="loginEmail"
+                    placeholder="Enter your email">
+
+                <p id="emailError"
+                   class="error-message">
+                </p>
+
+
+                <!-- ================= PASSWORD ================= -->
+
+                <label>
+                    User Password
+                </label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter your password">
+
+                <p id="loginError"
+                   class="error-message">
+                </p>
+
+
+                <!-- ================= LOGIN BUTTON ================= -->
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+
+            <!-- ================= SUCCESS MESSAGE ================= -->
+
+            <div id="successMessage"
+                 class="success-message">
+
+                ✓ Login Successful!
+
+            </div>
+
+
+            <!-- ================= REGISTER LINK ================= -->
+
+            <p class="register-text">
+
+                Don't have an account?
+
+                <a href="reg.html">
+                    Register
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Login JavaScript -->
+
+    <script src="../js/login.js"></script>
+
+</body>
+
+</html>

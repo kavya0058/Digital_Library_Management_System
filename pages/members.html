@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Library - Members</title>
+
+    <link rel="stylesheet" href="../css/members.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            📚 Digital Library
+        </div>
+
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="books.html">📚 Books</a>
+            <a href="members.html">👥 Members</a>
+            <a href="issueBooks.html">📖 Issue Book</a>
+            <a href="returnBooks.html">↩️ Return Book</a>
+            <a href="reports.html">📊 Reports</a>
+            <a href="about.html">ℹ️ About</a>
+            <a href="login.html" id="logoutLink">🚪 Logout</a>
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="members-container">
+
+        <!-- PAGE HEADING -->
+        <div class="page-heading">
+            <p>👥 Digital Library</p>
+            <h1>Member Management</h1>
+            <span>View and manage library members</span>
+        </div>
+
+
+        <!-- MEMBER LIST -->
+        <section class="member-list-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>👥 Member List</h2>
+                    <p>Members registered in the library</p>
+                </div>
+
+                <button type="button" id="showAddMember">
+                    + Add Member
+                </button>
+
+            </div>
+
+
+            <!-- SEARCH -->
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchMember"
+                    placeholder="Search by Member ID, Name or Department">
+
+                <button type="button" id="clearSearch">
+                    Clear
+                </button>
+
+            </div>
+
+
+            <!-- MEMBER TABLE -->
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Member ID</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="memberTableBody">
+                        <!-- Members displayed using JavaScript -->
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ADD MEMBER FORM -->
+        <section id="addMemberSection" class="add-member-section">
+
+            <div class="form-heading">
+                <h2>➕ Add New Member</h2>
+                <p>Enter the details of the new member</p>
+            </div>
+
+
+            <form id="memberForm">
+
+                <!-- MEMBER ID -->
+                <div class="input-group">
+
+                    <label for="memberId">Member ID</label>
+
+                    <input
+                        type="text"
+                        id="memberId"
+                        placeholder="Enter Member ID"
+                        maxlength="15">
+
+                    <p id="memberIdError" class="error-message"></p>
+
+                </div>
+
+
+                <!-- NAME -->
+                <div class="input-group">
+
+                    <label for="memberName">Name</label>
+
+                    <input
+                        type="text"
+                        id="memberName"
+                        placeholder="Enter Member Name"
+                        maxlength="50">
+
+                    <p id="memberNameError" class="error-message"></p>
+
+                </div>
+
+
+                <!-- DEPARTMENT -->
+                <div class="input-group">
+
+                    <label for="department">Department</label>
+
+                    <input
+                        type="text"
+                        id="department"
+                        placeholder="Enter Department">
+
+                    <p id="departmentError" class="error-message"></p>
+
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="input-group">
+
+                    <label for="memberEmail">Email</label>
+
+                    <input
+                        type="text"
+                        id="memberEmail"
+                        placeholder="Enter Email"
+                        inputmode="email">
+
+                    <p id="memberEmailError" class="error-message"></p>
+
+                </div>
+
+
+                <!-- MOBILE -->
+                <div class="input-group">
+
+                    <label for="memberMobile">Mobile</label>
+
+                    <input
+                        type="tel"
+                        id="memberMobile"
+                        placeholder="Enter 10 digit mobile number"
+                        maxlength="10"
+                        inputmode="numeric">
+
+                    <p id="memberMobileError" class="error-message"></p>
+
+                </div>
+
+
+                <!-- BUTTONS -->
+                <div class="form-buttons">
+
+                    <button type="submit" class="save-button">
+                        Save Member
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelButton"
+                        class="cancel-button">
+                        Cancel
+                    </button>
+
+                </div>
+
+
+                <!-- SUCCESS MESSAGE -->
+                <p id="successMessage" class="success-message"></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= MEMBER DETAILS MODAL ================= -->
+
+    <div
+        id="memberModal"
+        class="member-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="memberModalTitle"
+        aria-hidden="true">
+
+        <div class="member-modal-content">
+
+            <button
+                type="button"
+                id="closeMemberModal"
+                class="close-member-modal"
+                aria-label="Close member details">
+                &times;
+            </button>
+
+            <div class="member-modal-icon">👤</div>
+
+            <h2 id="memberModalTitle">Member Details</h2>
+
+            <p class="member-modal-subtitle">
+                Library Member Information
+            </p>
+
+
+            <div class="member-detail-row">
+                <span class="detail-label">Member ID</span>
+                <span class="detail-value" id="viewMemberId"></span>
+            </div>
+
+            <div class="member-detail-row">
+                <span class="detail-label">Name</span>
+                <span class="detail-value" id="viewMemberName"></span>
+            </div>
+
+            <div class="member-detail-row">
+                <span class="detail-label">Department</span>
+                <span class="detail-value" id="viewMemberDepartment"></span>
+            </div>
+
+            <div class="member-detail-row">
+                <span class="detail-label">Email</span>
+                <span class="detail-value" id="viewMemberEmail"></span>
+            </div>
+
+            <div class="member-detail-row">
+                <span class="detail-label">Mobile</span>
+                <span class="detail-value" id="viewMemberMobile"></span>
+            </div>
+
+
+            <button
+                type="button"
+                id="closeMemberBtn"
+                class="close-member-btn">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+     <script>
+     document.getElementById("logoutLink").addEventListener("click", function () {
+     localStorage.removeItem("users");
+     sessionStorage.clear();
+});
+</script>
+    <script src="../js/members.js"></script>
+
+</body>
+</html>

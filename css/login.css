@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background-image:
+        url("../images/library2.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.overlay {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    background: rgba(62, 39, 35, 0.65);
+}
+
+.form-box {
+    width: 100%;
+    max-width: 450px;
+
+    padding: 40px;
+
+    background: #f5eee6;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+.library-icon {
+    text-align: center;
+
+    font-size: 50px;
+
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+
+    color: #3e2723;
+
+    font-size: 25px;
+
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+
+    color: #795548;
+
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+
+    margin-top: 18px;
+    margin-bottom: 7px;
+
+    font-weight: bold;
+
+    color: #4e342e;
+}
+
+input {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #a1887f;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+input:focus {
+    border-color: #6d4c41;
+}
+
+.error-message {
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+button {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #5d4037;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3e2723;
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+    display: none;
+}
+.register-text {
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #795548;
+}
+
+.register-text a {
+    color: #5d4037;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}

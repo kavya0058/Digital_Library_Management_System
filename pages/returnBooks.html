@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Library - Return Book</title>
+
+    <link rel="stylesheet"
+          href="../css/returnBooks.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <h2>📚 Digital Library</h2>
+
+        <div class="nav-links">
+
+            <a href="dashboard.html">Dashboard</a>
+
+            <a href="books.html">📚 Books</a>
+
+            <a href="members.html">👥 Members</a>
+
+            <a href="issueBooks.html">📖 Issue Book</a>
+
+            <a href="returnBooks.html" class="active">
+                ↩️ Return Book
+            </a>
+
+            <a href="reports.html">📊 Reports</a>
+
+            <a href="about.html">ℹ️ About</a>
+
+            <a href="login.html" id="logoutLink">🚪 Logout</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <div class="page-heading">
+
+            <h1>↩️ Return Book</h1>
+
+            <p>
+                Return an issued book to the library
+            </p>
+
+        </div>
+
+
+        <!-- ================= RETURN FORM ================= -->
+
+        <section class="return-section">
+
+            <h2>Return Issued Book</h2>
+
+
+            <!-- SELECT ISSUED BOOK -->
+
+            <div class="input-group">
+
+                <label for="issueSelect">
+                    Select Issued Book
+                </label>
+
+                <select id="issueSelect">
+
+                    <option value="">
+                        -- Select Issued Book --
+                    </option>
+
+                </select>
+
+                <p id="issueError"
+                   class="error-message"></p>
+
+            </div>
+
+
+            <!-- ================= BOOK DETAILS ================= -->
+
+            <div id="bookDetails"
+                 class="book-details"
+                 style="display: none;">
+
+                <h3>Book Details</h3>
+
+
+                <!-- MEMBER NAME -->
+
+                <p>
+                    <strong>Member:</strong>
+                    <span id="memberName"></span>
+                </p>
+
+
+                <!-- BOOK NAME -->
+
+                <p>
+                    <strong>Book:</strong>
+                    <span id="bookName"></span>
+                </p>
+
+
+                <!-- ISSUE DATE -->
+
+                <p>
+                    <strong>Issue Date:</strong>
+                    <span id="issueDate"></span>
+                </p>
+
+
+                <!-- EXPECTED RETURN DATE -->
+
+                <p>
+                    <strong>Expected Return Date:</strong>
+                    <span id="expectedReturnDate"></span>
+                </p>
+
+
+                <!-- ================= ACTUAL RETURN DATE ================= -->
+
+                <div class="input-group">
+
+                    <label for="actualReturnDateInput">
+                        Actual Return Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="actualReturnDateInput"
+                        required
+                    >
+
+                    <p id="actualReturnError"
+                       class="error-message"></p>
+
+                </div>
+
+
+                <!-- ================= FINE DETAILS ================= -->
+
+                <div id="fineDetails"
+                     style="display: none;">
+
+                    <h3>💰 Fine Details</h3>
+
+                    <p>
+                        <strong>Late Days:</strong>
+                        <span id="lateDays">0</span>
+                    </p>
+
+                    <p>
+                        <strong>Fine Amount:</strong>
+                        <span id="fineAmount">₹0</span>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= RETURN BUTTON ================= -->
+
+            <button id="returnButton"
+                    type="button">
+
+                ↩️ Confirm Return
+
+            </button>
+
+
+            <!-- ================= SUCCESS MESSAGE ================= -->
+
+            <p id="successMessage"
+               class="success-message"></p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+     <script>
+     document.getElementById("logoutLink").addEventListener("click", function () {
+     localStorage.removeItem("users");
+     sessionStorage.clear();
+});
+</script>
+
+    <script src="../js/returnBooks.js"></script>
+
+</body>
+
+</html>

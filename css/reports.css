@@ -1,0 +1,338 @@
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-image:
+        linear-gradient(
+            rgba(55, 35, 25, 0.80),
+            rgba(55, 35, 25, 0.80)
+        ),
+        url("../images/library2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #3e2723;
+}
+
+/* ================= NAVBAR ================= */
+
+nav {
+    width: 100%;
+    min-height: 72px;
+    padding: 15px 35px;
+
+    background-color: #4e342e;
+    color: #ffffff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 25px;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-wrap: nowrap;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+
+    padding: 10px 12px;
+    border-radius: 5px;
+
+    font-size: 14px;
+    white-space: nowrap;
+
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #795548;
+}
+
+.nav-links a.active {
+    background-color: #8d6e63;
+}
+
+.nav-links a:last-child {
+    background-color: #5d4037;
+}
+
+
+/* ================= RESPONSIVE NAVBAR ================= */
+
+@media (max-width: 1100px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 15px;
+    }
+
+    nav h2 {
+        font-size: 22px;
+    }
+
+    .nav-links {
+        gap: 5px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        padding: 8px;
+    }
+}
+
+/* ================= MAIN CONTENT ================= */
+
+main {
+    max-width: 1200px;
+    width: 92%;
+
+    margin: 40px auto;
+}
+
+
+/* ================= PAGE HEADING ================= */
+
+/* ================= REPORTS HEADING ================= */
+
+.page-heading {
+    text-align: center;
+    margin: 30px auto 35px;
+    padding: 15px 10px;
+}
+
+.page-heading h1 {
+    color: #fff8f0;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 8px;
+
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.page-heading p {
+    color: #fff8f0;
+    font-size: 16px;
+
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+
+/* ================= REPORT CARDS ================= */
+
+.report-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 22px;
+
+    margin-bottom: 35px;
+}
+
+.report-card {
+    background-color: white;
+
+    padding: 28px 18px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+
+    border-bottom: 5px solid #8d6e63;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.report-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.report-card h3 {
+    font-size: 17px;
+    margin-bottom: 15px;
+    color: #6d4c41;
+}
+
+.report-card p {
+    font-size: 34px;
+    font-weight: bold;
+    color: #5d4037;
+}
+
+
+/* ================= REPORT DETAILS ================= */
+
+.report-details {
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+.report-details h2 {
+    font-size: 24px;
+
+    margin-bottom: 22px;
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #d7ccc8;
+}
+
+.report-details p {
+    font-size: 17px;
+
+    margin-bottom: 16px;
+
+    color: #5d4037;
+}
+
+.report-details span {
+    font-weight: bold;
+    color: #3e2723;
+}
+
+
+/* ================= REFRESH BUTTON ================= */
+
+#refreshButton {
+    margin-top: 10px;
+
+    padding: 12px 22px;
+
+    background-color: #6d4c41;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s;
+}
+
+#refreshButton:hover {
+    background-color: #4e342e;
+}
+
+
+/* ================= REPORT MESSAGE ================= */
+
+#reportMessage {
+    margin-top: 18px;
+    font-size: 14px;
+    color: #388e3c;
+}
+
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media (max-width: 1000px) {
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .report-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    nav {
+        padding: 15px;
+    }
+
+    nav h2 {
+        font-size: 21px;
+    }
+
+    .nav-links {
+        gap: 5px;
+    }
+
+    .nav-links a {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    main {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    .page-heading h1 {
+        font-size: 27px;
+    }
+
+    .report-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .report-card {
+        padding: 22px;
+    }
+
+    .report-details {
+        padding: 22px;
+    }
+
+    .report-details h2 {
+        font-size: 21px;
+    }
+
+}

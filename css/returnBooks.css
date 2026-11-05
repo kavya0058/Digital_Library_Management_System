@@ -1,0 +1,479 @@
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            rgba(45, 27, 19, 0.62),
+            rgba(45, 27, 19, 0.62)
+        ),
+        url("../images/library2.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    color: #3e2723;
+}
+
+
+/* ================= NAVBAR ================= */
+
+nav {
+    width: 100%;
+    min-height: 65px;
+
+    padding: 10px 35px;
+
+    background-color: #50352e;
+    color: #ffffff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav h2 {
+    margin: 0;
+
+    color: #fff8f0;
+    font-size: 25px;
+
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+
+    padding: 10px 12px;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+    white-space: nowrap;
+
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #795548;
+}
+
+.nav-links a.active {
+    background-color: #795548;
+}
+
+.nav-links a:last-child {
+    background-color: #624239;
+}
+
+.nav-links a:last-child:hover {
+    background-color: #795548;
+}
+
+
+/* ================= MAIN CONTAINER ================= */
+
+main {
+    width: 90%;
+    max-width: 1230px;
+
+    margin: 35px auto;
+
+    padding: 30px 32px;
+
+    background-color: rgba(245, 237, 226, 0.98);
+
+    border-radius: 9px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.22);
+}
+
+
+/* ================= PAGE HEADING ================= */
+
+.page-heading {
+    text-align: center;
+
+    padding: 0 10px 30px;
+
+    margin-bottom: 5px;
+}
+
+.page-heading h1 {
+    color: #4e342e;
+
+    font-size: 32px;
+    font-weight: bold;
+
+    margin-bottom: 6px;
+}
+
+.page-heading p {
+    color: #795548;
+
+    font-size: 14px;
+}
+
+
+/* ================= RETURN SECTION ================= */
+
+.return-section {
+    background-color: transparent;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 0;
+
+    box-shadow: none;
+}
+
+.return-section h2 {
+    color: #4e342e;
+
+    font-size: 22px;
+
+    margin: 0 0 20px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #d5c1b5;
+}
+
+
+/* ================= INPUT GROUP ================= */
+
+.input-group {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+
+    font-weight: bold;
+    font-size: 14px;
+
+    color: #4e342e;
+
+    margin-bottom: 8px;
+}
+
+.input-group select,
+.input-group input {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #c4a493;
+    border-radius: 5px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+
+    color: #3e2723;
+
+    background-color: #fffaf5;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.input-group select {
+    cursor: pointer;
+}
+
+.input-group input[type="date"] {
+    cursor: pointer;
+}
+
+.input-group select:focus,
+.input-group input:focus {
+    outline: none;
+
+    border-color: #795548;
+
+    box-shadow: 0 0 0 2px rgba(121, 85, 72, 0.12);
+}
+
+
+/* ================= BOOK DETAILS ================= */
+
+.book-details {
+    margin-top: 25px;
+
+    padding: 22px;
+
+    background-color: #f8f0e8;
+
+    border-left: 5px solid #795548;
+
+    border-radius: 5px;
+}
+
+.book-details h3 {
+    color: #4e342e;
+
+    font-size: 19px;
+
+    margin: 0 0 15px;
+}
+
+.book-details p {
+    margin: 12px 0;
+
+    color: #5d4037;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.book-details strong {
+    color: #4e342e;
+}
+
+.book-details span {
+    overflow-wrap: anywhere;
+}
+
+
+/* ================= FINE DETAILS ================= */
+
+#fineDetails {
+    margin-top: 22px;
+
+    padding: 18px;
+
+    background-color: #f0e3d6;
+
+    border: 1px solid #d7bda9;
+    border-radius: 5px;
+}
+
+#fineDetails h3 {
+    color: #5d4037;
+
+    font-size: 18px;
+
+    margin-bottom: 12px;
+}
+
+#fineDetails p {
+    margin: 8px 0;
+
+    font-size: 14px;
+    color: #4e342e;
+}
+
+
+/* ================= RETURN BUTTON ================= */
+
+#returnButton {
+    margin-top: 25px;
+
+    padding: 12px 24px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #70483c;
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+#returnButton:hover {
+    background-color: #50352e;
+}
+
+
+/* ================= ERROR MESSAGE ================= */
+
+.error-message {
+    color: #c62828;
+
+    margin-top: 6px;
+
+    font-size: 13px;
+}
+
+
+/* ================= SUCCESS MESSAGE ================= */
+
+.success-message {
+    color: #2e7d32;
+
+    font-weight: bold;
+
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ================= RESPONSIVE NAVBAR ================= */
+
+@media (max-width: 1100px) {
+
+    nav {
+        flex-direction: column;
+        justify-content: center;
+
+        gap: 12px;
+
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        position: relative;
+    }
+
+    nav h2 {
+        font-size: 23px;
+    }
+
+    .nav-links {
+        gap: 4px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        padding: 8px 9px;
+    }
+
+    main {
+        width: 94%;
+
+        margin: 25px auto;
+
+        padding: 25px 20px;
+    }
+
+    .page-heading {
+        padding-bottom: 25px;
+    }
+
+    .page-heading h1 {
+        font-size: 27px;
+    }
+
+    .return-section h2 {
+        font-size: 20px;
+    }
+
+    .book-details {
+        padding: 18px;
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    nav {
+        padding: 15px 10px;
+    }
+
+    nav h2 {
+        font-size: 21px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+        padding: 7px;
+    }
+
+    main {
+        width: 94%;
+
+        margin: 20px auto;
+
+        padding: 22px 14px;
+    }
+
+    .page-heading h1 {
+        font-size: 24px;
+    }
+
+    .page-heading p {
+        font-size: 13px;
+    }
+
+    .return-section h2 {
+        font-size: 19px;
+    }
+
+    .input-group select,
+    .input-group input {
+        padding: 11px;
+        font-size: 14px;
+    }
+
+    .book-details {
+        padding: 14px;
+    }
+
+    .book-details h3,
+    #fineDetails h3 {
+        font-size: 17px;
+    }
+
+    #returnButton {
+        width: 100%;
+    }
+}

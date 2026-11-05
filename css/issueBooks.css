@@ -1,0 +1,525 @@
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            rgba(45, 27, 19, 0.62),
+            rgba(45, 27, 19, 0.62)
+        ),
+        url("../images/library2.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    color: #3e2723;
+    min-height: 100vh;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    width: 100%;
+    min-height: 65px;
+
+    background-color: #50352e;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 35px;
+    gap: 20px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: #fff8f0;
+    font-size: 25px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 14px;
+    padding: 10px 12px;
+
+    border-radius: 5px;
+    white-space: nowrap;
+
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #795548;
+}
+
+.nav-links a.active {
+    background-color: #795548;
+}
+
+/* Logout */
+
+.nav-links a:last-child {
+    background-color: #624239;
+}
+
+.nav-links a:last-child:hover {
+    background-color: #795548;
+}
+
+
+/* ================= MAIN CONTAINER ================= */
+
+.issue-container {
+    width: 90%;
+    max-width: 1230px;
+
+    margin: 35px auto;
+
+    padding: 30px 32px;
+
+    background-color: rgba(245, 237, 226, 0.98);
+
+    border-radius: 9px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.22);
+}
+
+
+/* ================= PAGE HEADING ================= */
+
+.page-heading {
+    text-align: center;
+
+    padding: 0 10px 30px;
+
+    margin-bottom: 5px;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.page-heading p {
+    color: #795548;
+    font-size: 14px;
+
+    margin-bottom: 3px;
+}
+
+.page-heading h1 {
+    color: #4e342e;
+
+    font-size: 32px;
+    font-weight: bold;
+
+    margin: 0 0 5px;
+}
+
+.page-heading span {
+    color: #795548;
+    font-size: 14px;
+}
+
+
+/* ================= ISSUE FORM SECTION ================= */
+
+.issue-section {
+    background: transparent;
+
+    padding: 0;
+
+    margin-bottom: 30px;
+
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+
+/* ================= RECORDS SECTION ================= */
+
+.records-section {
+    background: transparent;
+
+    padding: 0;
+
+    margin-bottom: 0;
+
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+
+/* ================= SECTION HEADINGS ================= */
+
+.section-heading {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #d5c1b5;
+}
+
+.section-heading h2 {
+    color: #4e342e;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    margin-bottom: 3px;
+}
+
+.section-heading p {
+    color: #795548;
+    font-size: 14px;
+}
+
+
+/* ================= FORM ================= */
+
+#issueForm {
+    width: 100%;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+
+    color: #4e342e;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+.input-group select,
+.input-group input {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #c4a493;
+    border-radius: 5px;
+
+    background-color: #fffaf5;
+
+    color: #3e2723;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+
+    transition: border-color 0.2s ease;
+}
+
+.input-group select {
+    cursor: pointer;
+}
+
+.input-group input[type="date"] {
+    cursor: pointer;
+}
+
+.input-group select:focus,
+.input-group input:focus {
+    outline: none;
+
+    border-color: #795548;
+
+    box-shadow: 0 0 0 2px rgba(121, 85, 72, 0.12);
+}
+
+
+/* ================= ERROR MESSAGE ================= */
+
+.error-message {
+    color: #c62828;
+
+    font-size: 13px;
+
+    margin-top: 4px;
+}
+
+
+/* ================= FORM BUTTONS ================= */
+
+.form-buttons {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 22px;
+    margin-bottom: 10px;
+}
+
+.issue-button,
+.clear-button {
+    padding: 11px 22px;
+
+    border: none;
+    border-radius: 5px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+.issue-button {
+    background-color: #70483c;
+    color: #ffffff;
+}
+
+.issue-button:hover {
+    background-color: #50352e;
+}
+
+.clear-button {
+    background-color: #b9a69d;
+    color: #3e2723;
+}
+
+.clear-button:hover {
+    background-color: #a18b81;
+}
+
+
+/* ================= MESSAGE ================= */
+
+.message {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    color: #4e342e;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ================= TABLE CONTAINER ================= */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border-radius: 5px;
+    border: 1px solid #e1d3c9;
+}
+
+
+/* ================= TABLE ================= */
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background-color: #fffaf5;
+}
+
+thead {
+    background-color: #50352e;
+}
+
+th {
+    background-color: #50352e;
+    color: #ffffff;
+
+    padding: 14px 12px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    text-align: center;
+    white-space: nowrap;
+}
+
+td {
+    padding: 13px 12px;
+
+    border-bottom: 1px solid #e4d7ce;
+
+    color: #3e2723;
+
+    font-size: 14px;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f0e8;
+}
+
+tbody tr:hover {
+    background-color: #eee2d7;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+
+    .issue-container {
+        width: 94%;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: relative;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        padding: 8px 9px;
+    }
+
+    .issue-container {
+        width: 94%;
+
+        margin: 25px auto;
+        padding: 25px 20px;
+    }
+
+    .page-heading {
+        padding-bottom: 25px;
+    }
+
+    .page-heading h1 {
+        font-size: 27px;
+    }
+
+    .section-heading h2 {
+        font-size: 20px;
+    }
+
+    .issue-section {
+        margin-bottom: 28px;
+    }
+
+    table {
+        min-width: 600px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 15px 10px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+        padding: 7px;
+    }
+
+    .issue-container {
+        width: 94%;
+
+        margin: 20px auto;
+        padding: 22px 14px;
+    }
+
+    .page-heading h1 {
+        font-size: 24px;
+    }
+
+    .page-heading span {
+        font-size: 13px;
+    }
+
+    .section-heading h2 {
+        font-size: 19px;
+    }
+
+    .input-group select,
+    .input-group input {
+        padding: 11px;
+        font-size: 14px;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .issue-button,
+    .clear-button {
+        width: 100%;
+    }
+}
